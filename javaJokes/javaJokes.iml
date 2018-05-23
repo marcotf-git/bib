@@ -27,5 +27,47 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="appcompat-v7-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-v4-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-fragment-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="animated-vector-drawable-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-core-ui-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-core-utils-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-vector-drawable-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-media-compat-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-compat-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="support-annotations-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="livedata-core-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="viewmodel-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="runtime-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="common-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="appcompat-v7-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-v4-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-fragment-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="animated-vector-drawable-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-core-ui-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-core-utils-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-vector-drawable-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-media-compat-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-compat-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="support-annotations-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="livedata-core-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="viewmodel-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="runtime-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="common-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="appcompat-v7-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-v4-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-fragment-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="animated-vector-drawable-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-core-ui-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-core-utils-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-vector-drawable-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-media-compat-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-compat-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="support-annotations-27.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="livedata-core-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="viewmodel-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="runtime-1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="common-1.1.0" level="project" />
   </component>
 </module>
