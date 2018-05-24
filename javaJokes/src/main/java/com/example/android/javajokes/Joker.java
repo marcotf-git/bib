@@ -26,5 +26,6 @@ public class Joker {
         }
 
         return jokes[jokeCount];
+
     }
 }
