@@ -9,7 +9,13 @@ public class Joker {
             "This is my final joke. I will reset to the first!"
     };
 
-    private static int jokeCount = -1;
+    private static Integer jokeCount;
+
+    public Joker() {
+        if (null == jokeCount){
+            jokeCount = -1;
+        }
+    }
 
     public String getJoke() {
 
