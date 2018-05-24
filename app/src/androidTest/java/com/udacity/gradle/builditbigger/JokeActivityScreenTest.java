@@ -35,7 +35,7 @@ public class JokeActivityScreenTest {
     // Registers any resource that needs to be synchronized with Espresso before the test is run.
     @Before
     public void registerIdlingResource() {
-
+        mIdlingResource = mActivityRule.getActivity().getIdlingResource();
         // To prove that the test fails, omit this call:
         Espresso.registerIdlingResources(mIdlingResource);
 

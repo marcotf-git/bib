@@ -18,8 +18,24 @@ import com.udacity.gradle.builditbigger.IdlingResource.SimpleIdlingResource;
 import static com.example.android.jokelibrary.JokeActivity.JOKE_TEXT;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements MainActivityFragment.OnCallEndpointListener{
 
+    // The Idling Resource which will be null in production.
+    @Nullable
+    private SimpleIdlingResource mIdlingResource;
+
+    /**
+     * Only called from test, creates and returns a new {@link SimpleIdlingResource}.
+     */
+    @VisibleForTesting
+    @NonNull
+    public IdlingResource getIdlingResource() {
+        if (mIdlingResource == null) {
+            mIdlingResource = new SimpleIdlingResource();
+        }
+        return mIdlingResource;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,4 +66,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // This is the listener implementation for communications from the fragment
+    @Override
+    public void onCallEndpoint(Boolean idleState) {
+
+        if (mIdlingResource != null) {
+            mIdlingResource.setIdleState(idleState);
+        } else {
+            getIdlingResource();
+            mIdlingResource.setIdleState(idleState);
+        }
+    }
 }

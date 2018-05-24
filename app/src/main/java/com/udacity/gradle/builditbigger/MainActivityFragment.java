@@ -29,12 +29,28 @@ import static com.example.android.jokelibrary.JokeActivity.JOKE_TEXT;
 public class MainActivityFragment extends Fragment
         implements View.OnClickListener {
 
-    // The Idling Resource which will be null in production.
-    @Nullable
-    private SimpleIdlingResource mIdlingResource;
-
     private Context context;
 
+    // Listener variable
+    private OnCallEndpointListener mCallback;
+
+
+
+    // Listener for communication with the RecipeDetailActivity
+    public interface OnCallEndpointListener {
+        void onCallEndpoint(Boolean idleState);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mCallback = (OnCallEndpointListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnCallEndpointListener");
+        }
+    }
 
     // Mandatory constructor for instantiating the fragment
     public MainActivityFragment() {
@@ -65,7 +81,7 @@ public class MainActivityFragment extends Fragment
 
     public void callEndpoint() {
 
-        getIdlingResource();
+        mCallback.onCallEndpoint(false);
 
         EndpointsAsyncTask myTask = new EndpointsAsyncTask();
         myTask.setListener(new EndpointsAsyncTask.EndpointsAsyncTaskListener() {
@@ -79,9 +95,7 @@ public class MainActivityFragment extends Fragment
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG);
                 }
 
-                if (mIdlingResource != null) {
-                    mIdlingResource.setIdleState(true);
-                }
+                mCallback.onCallEndpoint(true);
 
             }
         });
@@ -100,15 +114,5 @@ public class MainActivityFragment extends Fragment
         }
     }
 
-    /**
-     * Only called from test, creates and returns a new {@link SimpleIdlingResource}.
-     */
-    @VisibleForTesting
-    @NonNull
-    public IdlingResource getIdlingResource() {
-        if (mIdlingResource == null) {
-            mIdlingResource = new SimpleIdlingResource();
-        }
-        return mIdlingResource;
-    }
+
 }
