@@ -13,7 +13,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/build/classes/java/main" />
     <output-test url="file://$MODULE_DIR$/build/classes/java/test" />
     <exclude-output />
@@ -30,11 +30,14 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="E__AndroidStudio_AndroidStudioProjects_ud867_gradle_master_FinalProject_javaJokes_assets_jokes_json" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="E__AndroidStudio_AndroidStudioProjects_ud867_gradle_master_FinalProject_javaJokes_assets_jokes_json" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="E__AndroidStudio_AndroidStudioProjects_ud867_gradle_master_FinalProject_javaJokes_assets_jokes_json" level="project" />
   </component>
 </module>

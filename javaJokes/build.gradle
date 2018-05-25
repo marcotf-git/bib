@@ -4,7 +4,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/json-simple-1.1.1.jar')
     implementation files('libs/apache-csv.jar')
+    implementation files('assets/jokes.json')
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

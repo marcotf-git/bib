@@ -5,6 +5,10 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 
+import org.apache.commons.logging.Log;
+
+import java.util.logging.LogRecord;
+
 import javax.inject.Named;
 
 /** An endpoint class we are exposing */
@@ -31,8 +35,8 @@ public class MyEndpoint {
     @ApiMethod(name = "tellJoke")
     public MyBean tellJoke() {
 
-        Joker joke = new Joker();
-        String myJoke = joke.getJoke();
+        //Joker joke = new Joker();
+        String myJoke = Joker.getJoke();
 
         MyBean response = new MyBean();
         response.setData(myJoke);

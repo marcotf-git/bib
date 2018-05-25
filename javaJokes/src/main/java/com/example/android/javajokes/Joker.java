@@ -11,104 +11,87 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-//public class Joker {
-//
-//    private String[] jokes = {
-//            "This is my first joke. Please wait for the next!",
-//            "This is my second joke. Please wait for the next!",
-//            "This is my third joke. Please wait for the next!",
-//            "This is my final joke. I will reset to the first!"
-//    };
-//
-//    private static Integer jokeCount;
-//
-//    public Joker() {
-//        if (null == jokeCount){
-//            jokeCount = -1;
-//        }
-//    }
-//
-//    public String getJoke() {
-//
-//        jokeCount++;
-//
-//        if (jokeCount >= jokes.length) {
-//            jokeCount = 0;
-//        }
-//
-//        return jokes[jokeCount];
-//
-//    }
-//}
 
 public class Joker {
 
-    private static List<String> jokes;
+    private static final String PATH = "assets/";
+    private static final String FILE_NAME = "jokes.json";
 
+    private static List<String> jokes;
     private static Integer jokeCount;
 
-    public Joker() {
-
-        if (null == jokeCount){
-            jokeCount = -1;
-        }
-
-//        if (jokes == null){
-//            readJokes();
-//        }
-
-        jokes = new ArrayList<String>();
-        jokes.add("This is a test Joke number 1");
-        jokes.add("This is a test Joke number 2");
-        jokes.add("This is a test Joke number 3");
-
+    // This is only for testing
+    public static void main(String[] args) {
+        Joker.getJoke();
     }
 
-    public String getJoke() {
+    public Joker() {
+    }
 
-        jokeCount++;
+    public static String getJoke() {
 
-        if (jokeCount >= jokes.size()) {
+        System.out.println("getJoke");
+
+        List<String> jokes = readJokes();
+
+        if (null == jokeCount){
+            jokeCount = 0;
+        } else if (jokeCount >= jokes.size()) {
             jokeCount = 0;
         }
 
-        String myJoke = jokes.get(jokeCount);
+        String myJoke;
 
-        System.out.println("getJoke myJoke:" + myJoke);
-
-        return myJoke;
+        if(null != jokes && jokes.size() > 0) {
+            myJoke = jokes.get(jokeCount);
+            jokeCount++;
+            System.out.println("getJoke return: myJoke:" + myJoke);
+            return myJoke;
+        } else {
+            return "Error in loading the joke.";
+        }
 
     }
 
-    private void readJokes() {
+    private static List<String> readJokes() {
 
-        jokes = new ArrayList<String>();
+        System.out.println("readJokes");
 
-        JSONParser parser = new JSONParser();
+        if (null == jokes) {
 
-        JSONArray mArray = null;
+            jokes = new ArrayList<>();
 
-        try {
-            mArray = (JSONArray) parser.parse(new FileReader("assets/jokes.json"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+            JSONParser parser = new JSONParser();
+            JSONArray mArray = null;
+
+            String errorMessage = "error";
+
+            try {
+                mArray = (JSONArray) parser.parse(new FileReader(PATH + FILE_NAME));
+            } catch (IOException | ParseException e) {
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+                errorMessage = e.getMessage();
+            }
+
+            if (null != mArray) {
+                for (Object myObject : mArray) {
+                    JSONObject joke = (JSONObject) myObject;
+                    long id = (long) joke.get("id");
+                    String description = (String) joke.get("description");
+                    System.out.println(id + " " + description);
+                    jokes.add(description);
+                }
+            }
+
+            if (jokes.size() == 0) {
+                jokes.add(errorMessage);
+            }
+
         }
 
-        for (Object myObject : mArray) {
+        return jokes;
 
-            JSONObject joke = (JSONObject) myObject;
-
-            long id = (long) joke.get("id");
-            System.out.println(id);
-
-            String description = (String) joke.get("description");
-            System.out.println(description);
-
-            jokes.add(description);
-
-        }
     }
 }
 

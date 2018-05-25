@@ -1,23 +1,58 @@
 Warning: Google App Engine Java 7 runtime is deprecated.
 Warning: See https://cloud.google.com/appengine/docs/deprecations/java7
-mai 24, 2018 11:41:07 PM java.util.prefs.WindowsPreferences <init>
+mai 25, 2018 1:38:46 PM java.util.prefs.WindowsPreferences <init>
 ADVERT?NCIA: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
-mai 24, 2018 11:41:07 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+mai 25, 2018 1:38:47 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
 INFORMA??ES: Overwriting system property key 'java.util.logging.config.file', value 'C:\Users\AndroidStudio\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'E:\AndroidStudio\AndroidStudioProjects\ud867-gradle-master\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
-mai 24, 2018 11:41:07 PM com.google.apphosting.utils.jetty.JettyLogger info
+mai 25, 2018 1:38:47 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFORMA??ES: Logging to JettyLogger(null) via com.google.apphosting.utils.jetty.JettyLogger
-mai 25, 2018 2:41:10 AM com.google.apphosting.utils.jetty.JettyLogger info
+mai 25, 2018 4:38:47 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFORMA??ES: jetty-6.1.x
-mai 25, 2018 2:41:14 AM com.google.apphosting.utils.jetty.JettyLogger info
+mai 25, 2018 4:38:49 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFORMA??ES: Started SelectChannelConnector@localhost:8080
-mai 25, 2018 2:41:15 AM com.google.appengine.tools.development.AbstractModule startup
+mai 25, 2018 4:38:49 PM com.google.appengine.tools.development.AbstractModule startup
 INFORMA??ES: Module instance default is running at http://localhost:8080/
-mai 25, 2018 2:41:15 AM com.google.appengine.tools.development.AbstractModule startup
+mai 25, 2018 4:38:49 PM com.google.appengine.tools.development.AbstractModule startup
 INFORMA??ES: The admin console is running at http://localhost:8080/_ah/admin
-mai 24, 2018 11:41:15 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+mai 25, 2018 1:38:49 PM com.google.appengine.tools.development.DevAppServerImpl doStart
 INFORMA??ES: Dev App Server is now running
-getJoke myJoke:This is a test Joke number 1
-getJoke myJoke:This is a test Joke number 2
-getJoke myJoke:This is a test Joke number 3
-getJoke myJoke:This is a test Joke number 1
-getJoke myJoke:This is a test Joke number 2
+getJoke
+readJokes
+1 Linux: born to be root.
+Windows: born to reboot!
+2 Is Google male or female?
+Female, because it doesn't let you finish sentence before making a sugestion.
+3 As I said before, I don't repeat myself.
+4 The surest sign that intelligent life exists elsewhere in the universe...
+Is that it has never tried to contact us.
+5 Be nice to people.
+Being nice to all people is also a sign of maturity, class and intelligence.
+Don't make offensive jokes.
+6 How many programmers does it take to change a light bulb?
+None. It's a hardware problem.
+getJoke return: myJoke:Linux: born to be root.
+Windows: born to reboot!
+getJoke
+readJokes
+getJoke return: myJoke:Is Google male or female?
+Female, because it doesn't let you finish sentence before making a sugestion.
+getJoke
+readJokes
+getJoke return: myJoke:As I said before, I don't repeat myself.
+getJoke
+readJokes
+getJoke return: myJoke:The surest sign that intelligent life exists elsewhere in the universe...
+Is that it has never tried to contact us.
+getJoke
+readJokes
+getJoke return: myJoke:Be nice to people.
+Being nice to all people is also a sign of maturity, class and intelligence.
+Don't make offensive jokes.
+getJoke
+readJokes
+getJoke return: myJoke:How many programmers does it take to change a light bulb?
+None. It's a hardware problem.
+getJoke
+readJokes
+getJoke return: myJoke:Linux: born to be root.
+Windows: born to reboot!
