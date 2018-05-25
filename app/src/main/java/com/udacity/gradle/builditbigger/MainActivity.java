@@ -1,6 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,13 +9,10 @@ import android.support.test.espresso.IdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
-import com.example.android.jokelibrary.JokeActivity;
 import com.udacity.gradle.builditbigger.IdlingResource.SimpleIdlingResource;
 
-import static com.example.android.jokelibrary.JokeActivity.JOKE_TEXT;
 
 
 public class MainActivity extends AppCompatActivity

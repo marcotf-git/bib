@@ -27,5 +27,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="apache-csv" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="courserajava" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="apache-csv" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="courserajava" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="apache-csv" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="courserajava" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="json-simple-1.1.1" level="project" />
   </component>
 </module>

@@ -92,7 +92,7 @@ public class MainActivityFragment extends Fragment
                     myIntent.putExtra(JOKE_TEXT, jokeString);
                     startActivity(myIntent);
                 } else {
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG);
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }
 
                 mCallback.onCallEndpoint(true);

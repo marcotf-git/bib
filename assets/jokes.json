@@ -1,0 +1,14 @@
+[
+  {
+  "id": 1,
+  "description": "First joke."
+  },
+  {
+    "id": 2,
+    "description": "Second joke."
+  },
+  {
+    "id": 3,
+    "description": "Third joke."
+  }
+]

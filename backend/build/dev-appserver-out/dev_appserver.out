@@ -1,30 +1,30 @@
 Warning: Google App Engine Java 7 runtime is deprecated.
 Warning: See https://cloud.google.com/appengine/docs/deprecations/java7
-mai 24, 2018 4:29:26 PM java.util.prefs.WindowsPreferences <init>
+mai 24, 2018 11:06:33 PM java.util.prefs.WindowsPreferences <init>
 ADVERT?NCIA: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
-mai 24, 2018 4:29:27 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+mai 24, 2018 11:06:37 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
 INFORMA??ES: Overwriting system property key 'java.util.logging.config.file', value 'C:\Users\AndroidStudio\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'E:\AndroidStudio\AndroidStudioProjects\ud867-gradle-master\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
-mai 24, 2018 4:29:27 PM com.google.apphosting.utils.jetty.JettyLogger info
+mai 24, 2018 11:06:38 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFORMA??ES: Logging to JettyLogger(null) via com.google.apphosting.utils.jetty.JettyLogger
-mai 24, 2018 7:29:27 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+mai 25, 2018 2:06:39 AM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
 ADVERT?NCIA: Your working directory, (E:\AndroidStudio\AndroidStudioProjects\ud867-gradle-master\FinalProject\backend) is not equal to your 
 web application root (E:\AndroidStudio\AndroidStudioProjects\ud867-gradle-master\FinalProject\backend\build\exploded-backend)
 You will not be able to access files from your working directory on the production server.
 
-mai 24, 2018 7:29:27 PM com.google.apphosting.utils.jetty.JettyLogger info
+mai 25, 2018 2:06:42 AM com.google.apphosting.utils.jetty.JettyLogger info
 INFORMA??ES: jetty-6.1.x
-mai 24, 2018 7:29:29 PM com.google.apphosting.utils.jetty.JettyLogger info
+mai 25, 2018 2:06:45 AM com.google.apphosting.utils.jetty.JettyLogger info
 INFORMA??ES: Started SelectChannelConnector@localhost:8080
-mai 24, 2018 7:29:29 PM com.google.appengine.tools.development.AbstractModule startup
+mai 25, 2018 2:06:46 AM com.google.appengine.tools.development.AbstractModule startup
 INFORMA??ES: Module instance default is running at http://localhost:8080/
-mai 24, 2018 7:29:29 PM com.google.appengine.tools.development.AbstractModule startup
+mai 25, 2018 2:06:46 AM com.google.appengine.tools.development.AbstractModule startup
 INFORMA??ES: The admin console is running at http://localhost:8080/_ah/admin
-mai 24, 2018 4:29:29 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+mai 24, 2018 11:06:46 PM com.google.appengine.tools.development.DevAppServerImpl doStart
 INFORMA??ES: Dev App Server is now running
-mai 24, 2018 4:37:24 PM com.google.appengine.tools.development.AbstractModule shutdown
-INFORMA??ES: Shutting down module instance default
-Shutting down.
-mai 24, 2018 4:37:24 PM com.google.appengine.api.datastore.dev.LocalDatastoreService cleanupActiveServices
-INFORMA??ES: scheduler shutting down.
-mai 24, 2018 4:37:24 PM com.google.appengine.api.datastore.dev.LocalDatastoreService cleanupActiveServices
-INFORMA??ES: scheduler finished shutting down.
+mai 24, 2018 11:07:09 PM com.google.appengine.repackaged.com.google.protobuf.UnsafeUtil supportsUnsafeByteBufferOperations
+ADVERT?NCIA: platform method missing - proto runtime falling back to safer methods: java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "accessClassInPackage.sun.misc")
+mai 24, 2018 11:07:09 PM com.google.appengine.repackaged.com.google.protobuf.UnsafeUtil supportsUnsafeArrayOperations
+ADVERT?NCIA: platform method missing - proto runtime falling back to safer methods: java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "accessClassInPackage.sun.misc")
+getJoke myJoke:This is a test Joke number 1
+getJoke myJoke:This is a test Joke number 2
+getJoke myJoke:This is a test Joke number 3
