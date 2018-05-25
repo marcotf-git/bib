@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        android:text="@string/instructions" />
+        android:text="@string/instructions"
+        android:textSize="@dimen/text_size"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -34,7 +35,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:text="Tell me a joke!"
+        android:text="@string/joke_button_label"
         tools:context=".MainActivityFragment" />
 
 </RelativeLayout>
