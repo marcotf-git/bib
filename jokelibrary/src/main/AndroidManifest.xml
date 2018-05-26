@@ -4,7 +4,9 @@
     package="com.example.android.jokelibrary">
 
     <application>
-        <activity android:name=".JokeActivity">
+        <activity
+            android:name=".JokeActivity"
+            android:theme="@style/MyTheme">
         </activity>
     </application>
 

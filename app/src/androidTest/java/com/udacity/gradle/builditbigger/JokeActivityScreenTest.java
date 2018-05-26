@@ -1,8 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.support.test.espresso.Espresso;
+import android.support.test.espresso.IdlingRegistry;
 import android.support.test.espresso.IdlingResource;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
@@ -30,6 +28,7 @@ public class JokeActivityScreenTest {
 
     @Rule
     public final ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
+    private IdlingRegistry myIdlingRegistry;
 
 
     // Registers any resource that needs to be synchronized with Espresso before the test is run.
@@ -37,9 +36,11 @@ public class JokeActivityScreenTest {
     public void registerIdlingResource() {
         mIdlingResource = mActivityRule.getActivity().getIdlingResource();
         // To prove that the test fails, omit this call:
-        Espresso.registerIdlingResources(mIdlingResource);
-
+        //Espresso.registerIdlingResources(mIdlingResource); (deprecated)
+        myIdlingRegistry = IdlingRegistry.getInstance();
+        myIdlingRegistry.register(mIdlingResource);
     }
+
 
 
     /**
@@ -61,7 +62,8 @@ public class JokeActivityScreenTest {
     @After
     public void unregisterIdlingResource() {
         if (mIdlingResource != null) {
-            Espresso.unregisterIdlingResources(mIdlingResource);
+            //Espresso.unregisterIdlingResources(mIdlingResource);
+            myIdlingRegistry.unregister(mIdlingResource);
         }
     }
 

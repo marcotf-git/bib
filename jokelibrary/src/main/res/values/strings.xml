@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Joke Library</string>
+    <string name="app_name">Build it Bigger</string>
     <string name="my_joke">My Joke</string>
+    <string name="go_back">Go Back</string>
 </resources>

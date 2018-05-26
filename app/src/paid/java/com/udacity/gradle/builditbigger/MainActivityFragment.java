@@ -27,8 +27,6 @@ public class MainActivityFragment extends Fragment
     // Listener variable
     private OnCallEndpointListener mCallback;
 
-
-
     // Listener for communication with the RecipeDetailActivity
     public interface OnCallEndpointListener {
         void onCallEndpoint(Boolean idleState);
@@ -81,11 +79,10 @@ public class MainActivityFragment extends Fragment
                 }
 
                 mCallback.onCallEndpoint(true);
-
             }
         });
 
-        myTask.execute(new Pair<Context, String>(context, ""));
+        myTask.execute();
     }
 
 

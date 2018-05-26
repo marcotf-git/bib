@@ -1,8 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v4.util.Pair;
 import android.util.Log;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -14,8 +12,7 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import java.io.IOException;
 
 
-
-class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     private static final String TAG = EndpointsAsyncTask.class.getSimpleName();
 
@@ -32,7 +29,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
 
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected final String doInBackground(Void... voids) {
 
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -43,17 +40,13 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
                     .setRootUrl("http://10.0.2.2:8080/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
-                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
+                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
             // end options for devappserver
-
             myApiService = builder.build();
         }
-
-        Context context = params[0].first;
-        String name = params[0].second;
 
         String content = null;
 
@@ -66,7 +59,6 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         }
 
         return content;
-
     }
 
     @Override
@@ -77,6 +69,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
             this.mListener.onCompleted(result, mError);
         }
     }
+
 
     public EndpointsAsyncTask setListener(EndpointsAsyncTaskListener listener) {
         this.mListener = listener;
