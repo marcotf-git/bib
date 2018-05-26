@@ -9,6 +9,8 @@ import android.support.test.espresso.IdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 
 import com.udacity.gradle.builditbigger.IdlingResource.SimpleIdlingResource;
@@ -17,6 +19,7 @@ import com.udacity.gradle.builditbigger.IdlingResource.SimpleIdlingResource;
 
 public class MainActivity extends AppCompatActivity
     implements MainActivityFragment.OnCallEndpointListener{
+
 
     // The Idling Resource which will be null in production.
     @Nullable
@@ -38,7 +41,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     @Override

@@ -6,4 +6,8 @@
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="error_message">Error on loading</string>
     <string name="joke_button_label">Tell me a joke!</string>
+    <string name="file_loading_error_message">
+        Failed to load the file with the recipes.
+        Please, verify the internet connection and try again.
+    </string>
 </resources>

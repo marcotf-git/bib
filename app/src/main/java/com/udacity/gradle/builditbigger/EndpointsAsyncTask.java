@@ -54,7 +54,7 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             content = myApiService.tellJoke().execute().getData();
             Log.v(TAG, "content:" + content);
         } catch (IOException e) {
-            Log.v(TAG, e.getMessage());
+            Log.v(TAG, "error in loading the database: " + e.getMessage());
             mError = e;
         }
 

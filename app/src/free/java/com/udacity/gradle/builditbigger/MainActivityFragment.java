@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.util.Pair;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.android.jokelibrary.JokeActivity;
@@ -29,9 +29,12 @@ import static com.example.android.jokelibrary.JokeActivity.JOKE_TEXT;
 public class MainActivityFragment extends Fragment
         implements View.OnClickListener {
 
+    private static final String TAG = MainActivityFragment.class.getSimpleName();
+
     private Context mContext;
     private InterstitialAd mInterstitialAd;
     private View mFragmentView;
+    ProgressBar mLoadingIndicator;
 
     // Listener variable
     private OnCallEndpointListener mCallback;
@@ -68,6 +71,7 @@ public class MainActivityFragment extends Fragment
 
         // This will be used for better transition setup
         mFragmentView = root.findViewById(R.id.rl_joke_fragment);
+        mLoadingIndicator = root.findViewById(R.id.pb_loading_indicator);
 
         Button mButtonCallEndpoint = root.findViewById(R.id.button_call_endpoint);
         mButtonCallEndpoint.setOnClickListener(this);
@@ -106,7 +110,12 @@ public class MainActivityFragment extends Fragment
 
             @Override
             public void onCompleted(String jokeString, Exception e) {
+
+                mLoadingIndicator.setVisibility(View.INVISIBLE);
+
+                // It will start the activity for showing the joke
                 Intent myIntent = new Intent(getContext(), JokeActivity.class);
+
                 if (jokeString != null) {
                     myIntent.putExtra(JOKE_TEXT, jokeString);
 
@@ -126,7 +135,6 @@ public class MainActivityFragment extends Fragment
 
                 // This is used for testing with Espresso idling resources.
                 mCallback.onCallEndpoint(true);
-
             }
         });
 
@@ -140,6 +148,10 @@ public class MainActivityFragment extends Fragment
         switch (view.getId()) {
             case R.id.button_call_endpoint:
 
+                mLoadingIndicator.setVisibility(View.VISIBLE);
+                // This is for better transition
+                mFragmentView.setVisibility(View.INVISIBLE);
+
                 mInterstitialAd.setAdListener(new AdListener() {
                     @Override
                     public void onAdClosed() {
@@ -148,14 +160,24 @@ public class MainActivityFragment extends Fragment
                         // Load the next interstitial.
                         mInterstitialAd.loadAd(new AdRequest.Builder().build());
                     }
+
+                    @Override
+                    public void onAdFailedToLoad(int i) {
+                        Log.v(TAG, "onAdFailedToLoad");
+                        // Call the async task for loading the joke.
+                        callEndpoint();
+                    }
                 });
 
                 if (mInterstitialAd.isLoaded()) {
-                    // This is for better transition
-                    mFragmentView.setVisibility(View.INVISIBLE);
                     mInterstitialAd.show();
                 } else {
                     Log.d("TAG", "The interstitial wasn't loaded yet.");
+                    Toast.makeText(getContext(), "Failed to load the add.", Toast.LENGTH_LONG).show();
+                    // Call the async task for loading the joke.
+                    callEndpoint();
+                    // Load the next interstitial.
+                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
                 }
 
                 break;
