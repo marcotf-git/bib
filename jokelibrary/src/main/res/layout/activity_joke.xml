@@ -11,10 +11,8 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:color="@color/my_text_material_dark"
-        android:background="@color/my_primary_material_dark"
         android:elevation="4dp"
-        app:titleTextColor="@color/my_text_material_dark"></android.support.v7.widget.Toolbar>
+        android:background="@color/background_material_light"/>
 
     <!--android:background="@color/my_primary_material_dark"-->
     <TextView
@@ -28,27 +26,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/go_back"
-        android:focusableInTouchMode="false"
-        android:foregroundGravity="top"
-        android:keepScreenOn="false"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back_white_24dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="358dp"
-        android:layout_height="57dp"
-        android:text="TextView" />
 
 </android.support.constraint.ConstraintLayout>

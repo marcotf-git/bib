@@ -29,7 +29,7 @@ import static com.example.android.jokelibrary.JokeActivity.JOKE_TEXT;
 public class MainActivityFragment extends Fragment
         implements View.OnClickListener {
 
-    private Context context;
+    private Context mContext;
     private InterstitialAd mInterstitialAd;
     private View mFragmentView;
 
@@ -45,6 +45,9 @@ public class MainActivityFragment extends Fragment
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        mContext = context;
+
         try {
             mCallback = (OnCallEndpointListener) context;
         } catch (ClassCastException e) {
@@ -60,8 +63,6 @@ public class MainActivityFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        context = getContext();
 
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -81,7 +82,7 @@ public class MainActivityFragment extends Fragment
         mAdView.loadAd(adRequest);
 
         // Interstitial ad setup
-        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd = new InterstitialAd(mContext);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 

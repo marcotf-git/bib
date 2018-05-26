@@ -40,13 +40,13 @@ public class JokeActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-//        // Get a support ActionBar corresponding to this toolbar
-//        ActionBar mActionBar = getSupportActionBar();
-//
-//        if(mActionBar != null) {
-//            // Enable the Up button
-//            mActionBar.setDisplayHomeAsUpEnabled(true);
-//        }
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar mActionBar = getSupportActionBar();
+
+        if(mActionBar != null) {
+            // Enable the Up button
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         // Enable action to close the activity
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
