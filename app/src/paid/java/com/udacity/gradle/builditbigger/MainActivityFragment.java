@@ -95,27 +95,33 @@ public class MainActivityFragment extends Fragment
             @Override
             public void onCompleted(String jokeString, Exception e) {
 
-                mLoadingIndicator.setVisibility(View.INVISIBLE);
+                // This will test if the Fragment is attached to the Activity and prevent error
+                // after rotating the device.
+                if(isAdded()) {
 
-                // It will start the activity for showing the joke
-                Intent myIntent = new Intent(mContext, JokeActivity.class);
+                    mLoadingIndicator.setVisibility(View.INVISIBLE);
 
-                if (jokeString != null) {
-                    myIntent.putExtra(JOKE_TEXT, jokeString);
+                    // It will start the activity for showing the joke
+                    Intent myIntent = new Intent(mContext, JokeActivity.class);
 
-                    // This is for better transition
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        startActivity(myIntent,
-                                ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                    if (jokeString != null) {
+
+                        myIntent.putExtra(JOKE_TEXT, jokeString);
+
+                        // This is for better transition
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                startActivity(myIntent,
+                                        ActivityOptions.makeSceneTransitionAnimation((Activity) mContext).toBundle());
+                        } else {
+                            startActivity(myIntent);
+                        }
+
                     } else {
-                        startActivity(myIntent);
+                        Log.e(TAG, "onCompleted:" + e.getMessage());
+                        Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
+                        // This is for better transition.
+                        mFragmentView.setVisibility(View.VISIBLE);
                     }
-
-                } else {
-                    Log.e(TAG, "onCompleted:" + e.getMessage());
-                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
-                    // This is for better transition.
-                    mFragmentView.setVisibility(View.VISIBLE);
                 }
 
                 // This is used for testing with Espresso idling resources.

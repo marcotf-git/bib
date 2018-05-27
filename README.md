@@ -201,13 +201,15 @@ https://cloud.google.com/appengine/docs/standard/java/building-app/static-conten
 
 https://docs.gradle.org/current/userguide/userguide.html
 
+https://stackoverflow.com/questions/10919240/fragment-myfragment-not-attached-to-activity
+
 https://stackoverflow.com/questions/18711433/button-listener-for-button-in-fragment-in-android
 
 https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
 
-https://github.com/square/assertj-android/issues/193
-
 https://stackoverflow.com/questions/49523302/android-studio-3-1-cannot-resolve-symbol-themes-widget-attr-etc
+
+https://github.com/square/assertj-android/issues/193
 
 https://github.com/flutter/flutter/issues/14020
 
@@ -218,6 +220,8 @@ http://marksunghunpark.blogspot.com.br/2015/05/how-to-test-asynctask-in-android.
 https://stackoverflow.com/questions/47078005/why-is-espressos-registeridlingresources-deprecated-and-what-replaces-it
 
 https://developer.android.com/reference/android/support/test/espresso/IdlingRegistry
+
+https://developer.android.com/training/transitions/start-activity#java
 
 _Useful links_
 

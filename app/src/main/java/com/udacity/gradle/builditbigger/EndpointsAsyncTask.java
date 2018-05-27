@@ -65,7 +65,7 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String result) {
 
         //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-        if(this.mListener != null) {
+        if(null != this.mListener) {
             this.mListener.onCompleted(result, mError);
         }
     }
