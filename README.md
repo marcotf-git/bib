@@ -184,7 +184,7 @@ There is one **Java** library that is serving the **GCE** and one **Android Libr
 
 The **Gradle** `tasks` are configured to `start` or `stop` the server, and also there are the normal tasks to `build` the modules of the `project`.
 
-There are four modules: the `app` (the device software that will runs in the phone, tablet, etc.), the associated `jokelibrary` (one **Android** library that has a helper `Activity` for showing the joke in the device screen), the `backend` (the **GCE** local server running on port 8080 of the `localhost`), and the associated `javaJokes` (the **Java** library that has a helper `class` that will query a **JSON** file, in the `backend/src/main/webapp/assets` folder, where the jokes are stored 😂).
+There are four modules: the `app` (the device software that will runs in the phone, tablet, etc.), the associated `jokelibrary` (one **Android** library that has a helper `Activity` for showing the joke in the device screen), the `backend` (the **GCE** local server running on port 8080 of the `localhost`), and the associated `javaJokes` (the **Java** library that has a helper `class` that will query a **JSON** file, in the `backend/src/main/webapp/assets` folder, where the jokes are stored).
 
 _This app is for learning purposes._ 📚
 
