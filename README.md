@@ -1,3 +1,10 @@
+# Build it Bigger App
+
+
+This project is an exercise as part of the **Android Developer Nanodegree**, by **Udacity**. The instructions, as provided by the course, resume all the aspects of the project. We transcript them bellow.
+
+---------------
+
 # Gradle for Android and Java Final Project
 
 In this project, you will create an app with multiple flavors that uses
@@ -41,7 +48,7 @@ https://developers.google.com/mobile-ads-sdk/docs/admob/android/quick-start
 You may need to download the Google Repository from the Extras section of the
 Android SDK Manager.
 
-You will also notice a folder called backend in the starter code. 
+You will also notice a folder called backend in the starter code.
 It will be used in step 3 below, and you do not need to worry about it for now.
 
 When you can build an deploy this starter code to an emulator, you're ready to
@@ -72,10 +79,10 @@ http://developer.android.com/guide/components/intents-filters.html
 
 This next task will be pretty tricky. Instead of pulling jokes directly from
 our Java library, we'll set up a Google Cloud Endpoints development server,
-and pull our jokes from there. The starter code already includes the GCE module 
+and pull our jokes from there. The starter code already includes the GCE module
 in the folder called backend.
 
-Before going ahead you will need to be able to run a local instance of the GCE 
+Before going ahead you will need to be able to run a local instance of the GCE
 server. In order to do that you will have to install the Cloud SDK:
 
 https://cloud.google.com/sdk/docs/
@@ -93,18 +100,18 @@ screenshot:
 
 <img src="/FinalProject/GCE-server-gradle-tasks.png" height="500">
 
-Once your local GCE server is started you should see the following at 
+Once your local GCE server is started you should see the following at
 [localhost:8080](http://localhost:8080)
 
 <img src="https://raw.githubusercontent.com/GoogleCloudPlatform/gradle-appengine-templates/77e9910911d5412e5efede5fa681ec105a0f02ad/doc/img/devappserver-endpoints.png">
 
-Now you are ready to continue! 
+Now you are ready to continue!
 
-Introduce a project dependency between your Java library 
-and your GCE module, and modify the GCE starter code to pull jokes from your Java library. 
-Create an AsyncTask to retrieve jokes using the template included int these 
-[instructions](https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/77e9910911d5412e5efede5fa681ec105a0f02ad/HelloEndpoints#2-connecting-your-android-app-to-the-backend). 
-Make the button kick off a task to retrieve a joke, 
+Introduce a project dependency between your Java library
+and your GCE module, and modify the GCE starter code to pull jokes from your Java library.
+Create an AsyncTask to retrieve jokes using the template included int these
+[instructions](https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/77e9910911d5412e5efede5fa681ec105a0f02ad/HelloEndpoints#2-connecting-your-android-app-to-the-backend).
+Make the button kick off a task to retrieve a joke,
 then launch the activity from your Android Library to display it.
 
 
@@ -166,3 +173,54 @@ Once you have a functioning project, consider adding more features to test your 
 * Make the free app variant display interstitial ads between the main activity and the joke-displaying activity.
 * Have the app display a loading indicator while the joke is being fetched from the server.
 * Write a Gradle task that starts the GCE dev server, runs all the Android tests, and shuts down the dev server.
+
+-----------------
+
+# Our Observations
+
+We have two instances of the software. One is the `app` itself, that will be running on the device (phone, tablet, etc.) or the emulator. The `app` has an `API` for querying the remote server that has the data that will be shown in the screen. Another is an **GCE** development server, running on the local computer, serving the data that will be queried by the `app`. This is the `API` endpoint.
+
+There is one **Java** library that is serving the **GCE** and one **Android Library** that is serving the `app`. Both instances of the software are packaged in only one `project` in the **Android Studio**.
+
+The **Gradle** `tasks` are configured to `start` or `stop` the server, and also there are the normal tasks to `build` the modules of the `project`.
+
+There are four modules: the `app` (the device software that will runs in the phone, tablet, etc.), the associated `jokelibrary` (one **Android** library that has a helper `Activity` for showing the joke in the device screen), the `backend` (the **GCE** local server running on port 8080 of the `localhost`), and the associated `javaJokes` (the **Java** library that has a helper `class` that will query a **JSON** file, in the `backend/src/main/webapp/assets` folder, where the jokes are stored 😂).
+
+_This app is for learning purposes._ 📚
+
+
+# Credits
+
+These are some useful links in addition to **Udacity**, the https://developer.android.com/guide, and https://developer.android.com/training, that were queried in this project:
+
+https://cloud.google.com/appengine/docs/
+
+https://cloud.google.com/tools/android-studio/app_engine/run_test_deploy
+
+https://cloud.google.com/appengine/docs/standard/java/building-app/static-content
+
+https://docs.gradle.org/current/userguide/userguide.html
+
+https://stackoverflow.com/questions/18711433/button-listener-for-button-in-fragment-in-android
+
+https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
+
+https://github.com/square/assertj-android/issues/193
+
+https://stackoverflow.com/questions/49523302/android-studio-3-1-cannot-resolve-symbol-themes-widget-attr-etc
+
+https://github.com/flutter/flutter/issues/14020
+
+https://codelabs.developers.google.com/codelabs/android-testing/#0
+
+http://marksunghunpark.blogspot.com.br/2015/05/how-to-test-asynctask-in-android.html
+
+https://stackoverflow.com/questions/47078005/why-is-espressos-registeridlingresources-deprecated-and-what-replaces-it
+
+https://developer.android.com/reference/android/support/test/espresso/IdlingRegistry
+
+_Useful links_
+
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services
+
+https://cloud.google.com/docs/tutorials

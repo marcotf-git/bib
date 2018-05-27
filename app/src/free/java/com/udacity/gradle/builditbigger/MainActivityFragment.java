@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,12 +35,12 @@ public class MainActivityFragment extends Fragment
     private Context mContext;
     private InterstitialAd mInterstitialAd;
     private View mFragmentView;
-    ProgressBar mLoadingIndicator;
+    private ProgressBar mLoadingIndicator;
 
     // Listener variable
     private OnCallEndpointListener mCallback;
 
-    // Listener for communication with the RecipeDetailActivity.
+    // Listener for communication with the MainActivity.
     // This is used for testing with Espresso idling resources.
     public interface OnCallEndpointListener {
         void onCallEndpoint(Boolean idleState);
@@ -64,7 +65,7 @@ public class MainActivityFragment extends Fragment
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_main, container, false);
@@ -114,7 +115,7 @@ public class MainActivityFragment extends Fragment
                 mLoadingIndicator.setVisibility(View.INVISIBLE);
 
                 // It will start the activity for showing the joke
-                Intent myIntent = new Intent(getContext(), JokeActivity.class);
+                Intent myIntent = new Intent(mContext, JokeActivity.class);
 
                 if (jokeString != null) {
                     myIntent.putExtra(JOKE_TEXT, jokeString);
@@ -128,7 +129,8 @@ public class MainActivityFragment extends Fragment
                     }
 
                 } else {
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "onCompleted:" + e.getMessage());
+                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
                     // This is for better transition.
                     mFragmentView.setVisibility(View.VISIBLE);
                 }
@@ -163,7 +165,7 @@ public class MainActivityFragment extends Fragment
 
                     @Override
                     public void onAdFailedToLoad(int i) {
-                        Log.v(TAG, "onAdFailedToLoad");
+                        Log.e(TAG, "onAdFailedToLoad");
                         // Call the async task for loading the joke.
                         callEndpoint();
                     }
@@ -172,8 +174,8 @@ public class MainActivityFragment extends Fragment
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
-                    Log.d("TAG", "The interstitial wasn't loaded yet.");
-                    Toast.makeText(getContext(), "Failed to load the add.", Toast.LENGTH_LONG).show();
+                    Log.v("TAG", "The interstitial wasn't loaded yet.");
+                    Toast.makeText(mContext, "Failed to load the add.", Toast.LENGTH_LONG).show();
                     // Call the async task for loading the joke.
                     callEndpoint();
                     // Load the next interstitial.

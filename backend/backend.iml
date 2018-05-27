@@ -70,7 +70,7 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="E__AndroidStudio_AndroidStudioProjects_ud867_gradle_master_FinalProject_javaJokes_assets_jokes_json" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_FinalProject_javaJokes_assets_jokes_json" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="endpoints-framework-2.0.9" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="google-api-client-appengine-1.21.0" level="project" />
@@ -112,7 +112,7 @@
     <orderEntry type="library" exported="" scope="RUNTIME" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="E__AndroidStudio_AndroidStudioProjects_ud867_gradle_master_FinalProject_javaJokes_assets_jokes_json" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_FinalProject_javaJokes_assets_jokes_json" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="endpoints-framework-2.0.9" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="google-api-client-appengine-1.21.0" level="project" />
@@ -154,6 +154,6 @@
     <orderEntry type="library" exported="" scope="TEST" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="E__AndroidStudio_AndroidStudioProjects_ud867_gradle_master_FinalProject_javaJokes_assets_jokes_json" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_FinalProject_javaJokes_assets_jokes_json" level="project" />
   </component>
 </module>

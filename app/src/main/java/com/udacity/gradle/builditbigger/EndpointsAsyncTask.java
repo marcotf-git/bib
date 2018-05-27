@@ -12,6 +12,7 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import java.io.IOException;
 
 
+// This function will query the GCE server and fetches the data
 class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     private static final String TAG = EndpointsAsyncTask.class.getSimpleName();
@@ -22,11 +23,10 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private EndpointsAsyncTaskListener mListener = null;
     private Exception mError = null;
 
-    // Listener for communication with the MainActivity
+    // Listener for communication with the MainActivityFragment
     public interface EndpointsAsyncTaskListener {
         void onCompleted(String jokeString, Exception e);
     }
-
 
     @Override
     protected final String doInBackground(Void... voids) {
@@ -54,7 +54,7 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             content = myApiService.tellJoke().execute().getData();
             Log.v(TAG, "content:" + content);
         } catch (IOException e) {
-            Log.v(TAG, "error in loading the database: " + e.getMessage());
+            Log.e(TAG, "Error in loading the database: " + e.getMessage());
             mError = e;
         }
 
@@ -69,7 +69,6 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             this.mListener.onCompleted(result, mError);
         }
     }
-
 
     public EndpointsAsyncTask setListener(EndpointsAsyncTaskListener listener) {
         this.mListener = listener;
