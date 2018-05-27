@@ -129,7 +129,7 @@ public class MainActivityFragment extends Fragment
                         // This is for better transition
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                             startActivity(myIntent,
-                                    ActivityOptions.makeSceneTransitionAnimation((Activity) mContext).toBundle());
+                                    ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                         } else {
                             startActivity(myIntent);
                         }
