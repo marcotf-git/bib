@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.transition.Explode;
 import android.view.View;
 import android.view.Window;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
@@ -16,7 +15,7 @@ public class JokeActivity extends AppCompatActivity {
     private static final String TAG = JokeActivity.class.getSimpleName();
     public static final String JOKE_TEXT = "joke text";
 
-    TextView mJokeView;
+    private TextView mJokeView;
 
 
     @Override

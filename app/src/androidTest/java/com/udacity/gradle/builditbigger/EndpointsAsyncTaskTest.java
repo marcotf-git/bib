@@ -1,15 +1,9 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
-import android.support.test.runner.AndroidJUnit4;
-import android.support.v4.util.Pair;
 import android.test.ApplicationTestCase;
 import android.app.Application;
 import android.text.TextUtils;
 import android.util.Log;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -63,7 +57,7 @@ public class EndpointsAsyncTaskTest extends ApplicationTestCase<Application> {
                 signal.countDown();
             }
         });
-        task.execute(new Pair<Context, String>(getContext(), ""));
+        task.execute();
 
         // It will wait the countDown or 2000ms time
         signal.await(TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS);

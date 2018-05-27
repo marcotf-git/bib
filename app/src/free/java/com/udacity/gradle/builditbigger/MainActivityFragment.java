@@ -102,7 +102,7 @@ public class MainActivityFragment extends Fragment
         super.onStart();
     }
 
-    public void callEndpoint() {
+    private void callEndpoint() {
 
         // This is used for testing with Espresso idling resources.
         mCallback.onCallEndpoint(false);
