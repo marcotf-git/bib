@@ -103,7 +103,7 @@ screenshot:
 Once your local GCE server is started you should see the following at
 [localhost:8080](http://localhost:8080)
 
-<img src="devappserver-endpoints.png">
+<img src="https://raw.githubusercontent.com/GoogleCloudPlatform/gradle-appengine-templates/77e9910911d5412e5efede5fa681ec105a0f02ad/doc/img/devappserver-endpoints.png">
 
 Now you are ready to continue!
 
