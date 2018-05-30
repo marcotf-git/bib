@@ -23,20 +23,21 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_FinalProject_javaJokes_assets_jokes_json" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_BuildItBigger_javaJokes_assets_jokes_json" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_FinalProject_javaJokes_assets_jokes_json" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_BuildItBigger_javaJokes_assets_jokes_json" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="apache-csv" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="courserajava" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_FinalProject_javaJokes_assets_jokes_json" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="E__AndroidStudio_AndroidStudioProjects_Udacity_Projects_BuildItBigger_javaJokes_assets_jokes_json" level="project" />
   </component>
 </module>

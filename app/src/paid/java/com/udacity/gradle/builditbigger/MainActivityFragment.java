@@ -89,7 +89,8 @@ public class MainActivityFragment extends Fragment
         // It will trigger the idling state to false.
         mCallback.onCallEndpoint(false);
 
-        EndpointsAsyncTask myTask = new EndpointsAsyncTask();
+        final EndpointsAsyncTask myTask = new EndpointsAsyncTask();
+
         myTask.setListener(new EndpointsAsyncTask.EndpointsAsyncTaskListener() {
 
             @Override
@@ -127,6 +128,9 @@ public class MainActivityFragment extends Fragment
                 // This is used for testing with Espresso idling resources.
                 // It will trigger the idling state to true.
                 mCallback.onCallEndpoint(true);
+
+                // Unregister the listener
+                myTask.unregisterListener();
             }
         });
 

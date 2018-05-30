@@ -19,7 +19,9 @@ import javax.inject.Named;
 )
 public class MyEndpoint {
 
-    /** A simple endpoint method that takes a name and says Hi back */
+    /** A simple test endpoint method that takes a name and says Hi back.
+     *  This is useful for testing if the server is up.
+     **/
     @ApiMethod(name = "sayHi")
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
@@ -28,6 +30,7 @@ public class MyEndpoint {
         return response;
     }
 
+    /** The method used by the backend to retrieve the jokes */
     @ApiMethod(name = "tellJoke")
     public MyBean tellJoke() {
 

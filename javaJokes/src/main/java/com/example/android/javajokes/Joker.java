@@ -32,7 +32,10 @@ public class Joker {
 
         System.out.println("getJoke");
 
-        List<String> jokes = readJokes();
+        // Only read the jokes if they aren't on (static) memory yet
+        if (null == jokes) {
+            jokes = readJokes();
+        }
 
         if (null == jokeCount){
             jokeCount = 0;

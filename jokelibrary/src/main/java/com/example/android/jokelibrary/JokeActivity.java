@@ -33,12 +33,15 @@ public class JokeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_joke);
 
-        String myJoke = getIntent().getStringExtra(JOKE_TEXT);
+        // Load the joke on the text view
+        String myJoke;
+        if (getIntent().hasExtra(JOKE_TEXT)) {
+            myJoke = getIntent().getStringExtra(JOKE_TEXT);
+            mJokeView = findViewById(R.id.tv_joke);
+            mJokeView.setText(myJoke);
+        }
 
-        mJokeView = findViewById(R.id.tv_joke);
-        mJokeView.setText(myJoke);
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         // Get a support ActionBar corresponding to this toolbar

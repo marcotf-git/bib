@@ -18,7 +18,6 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 
 
-
 @RunWith(AndroidJUnit4.class)
 public class JokeActivityScreenTest {
 
@@ -41,10 +40,8 @@ public class JokeActivityScreenTest {
         myIdlingRegistry.register(mIdlingResource);
     }
 
-
-
     /**
-     * Scrolls to a Recipe and checks if its title is correct.
+     * Checks if the text view joke is displayed
      */
     @Test
     public void testJoke() {
@@ -56,7 +53,6 @@ public class JokeActivityScreenTest {
                 .check(matches(isDisplayed()));
 
     }
-
 
     // Unregister resources when not needed to avoid malfunction.
     @After

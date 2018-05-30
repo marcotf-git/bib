@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -69,6 +68,8 @@ public class MainActivityFragment extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        Log.v(TAG, "onCreateView");
+
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         // This will be used for better transition setup
@@ -89,7 +90,7 @@ public class MainActivityFragment extends Fragment
 
         // Interstitial ad setup
         mInterstitialAd = new InterstitialAd(mContext);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         return root;
@@ -102,16 +103,20 @@ public class MainActivityFragment extends Fragment
         super.onStart();
     }
 
+    // This function will call the server for querying the data
     private void callEndpoint() {
 
         // This is used for testing with Espresso idling resources.
+        // It will trigger the idling state to false.
         mCallback.onCallEndpoint(false);
 
-        EndpointsAsyncTask myTask = new EndpointsAsyncTask();
+        final EndpointsAsyncTask myTask = new EndpointsAsyncTask();
 
         myTask.setListener(new EndpointsAsyncTask.EndpointsAsyncTaskListener() {
             @Override
             public void onCompleted(String jokeString, Exception e) {
+
+                Log.v(TAG, "EndpointsAsyncTaskListener onCompleted Activity:" + getActivity());
 
                 // This will test if the Fragment is attached to the Activity and prevent error
                 // after rotating the device.
@@ -144,6 +149,9 @@ public class MainActivityFragment extends Fragment
 
                 // This is used for testing with Espresso idling resources.
                 mCallback.onCallEndpoint(true);
+
+                // Unregister the listener
+                myTask.unregisterListener();
             }
         });
 
@@ -182,7 +190,7 @@ public class MainActivityFragment extends Fragment
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
-                    Log.v("TAG", "The interstitial wasn't loaded yet.");
+                    Log.e("TAG", "The interstitial wasn't loaded yet.");
                     Toast.makeText(mContext, "Failed to load the add.", Toast.LENGTH_LONG).show();
                     // Call the async task for loading the joke.
                     callEndpoint();

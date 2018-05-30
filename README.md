@@ -209,19 +209,25 @@ https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-wit
 
 https://stackoverflow.com/questions/49523302/android-studio-3-1-cannot-resolve-symbol-themes-widget-attr-etc
 
+https://stackoverflow.com/questions/2275004/in-java-how-do-i-check-if-a-string-contains-a-substring-ignoring-case
+
 https://github.com/square/assertj-android/issues/193
 
 https://github.com/flutter/flutter/issues/14020
 
 https://codelabs.developers.google.com/codelabs/android-testing/#0
 
-http://marksunghunpark.blogspot.com.br/2015/05/how-to-test-asynctask-in-android.html
+https://stackoverflow.com/questions/2321829/android-asynctask-testing-with-android-test-framework
 
 https://stackoverflow.com/questions/47078005/why-is-espressos-registeridlingresources-deprecated-and-what-replaces-it
+
+https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests
 
 https://developer.android.com/reference/android/support/test/espresso/IdlingRegistry
 
 https://developer.android.com/training/transitions/start-activity#java
+
+https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CountDownLatch.html
 
 _Useful links_
 
